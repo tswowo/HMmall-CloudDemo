@@ -19,3 +19,4 @@ target/
 /cart-service/src/main/resources/application-dev.yaml
 /cart-service/src/main/resources/application-local.yaml
 /logs/cart-service/spring.log
+/logs/hm-api/spring.log
