@@ -24,3 +24,7 @@ target/
 /hm-service/logs/
 /user-service/src/main/resources/application-dev.yaml
 /user-service/src/main/resources/application-local.yaml
+/trade-service/src/main/resources/application-dev.yaml
+/trade-service/src/main/resources/application-local.yaml
+/pay-service/src/main/resources/application-dev.yaml
+/pay-service/src/main/resources/application-local.yaml
