@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cart-service</artifactId>
+    <artifactId>user-service</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -48,11 +48,6 @@
             <groupId>com.heima</groupId>
             <artifactId>api-service</artifactId>
             <version>1.0.0</version>
-        </dependency>
-        <!--加密-->
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-crypto</artifactId>
         </dependency>
     </dependencies>
     <build>
