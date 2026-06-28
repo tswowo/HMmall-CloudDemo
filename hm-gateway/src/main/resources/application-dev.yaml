@@ -1,0 +1,9 @@
+hm:
+  db:
+    host: mysql
+    pw: 123
+  nacos:
+    host: localhost
+    port: 8848
+    username: nacos
+    password: qwert88NACOS...
