@@ -1,6 +1,9 @@
 package com.hmall.common.utils;
 
 public class UserContext {
+
+    public static final String USER_HEADER = "user-info";
+
     private static final ThreadLocal<Long> tl = new ThreadLocal<>();
 
     /**
