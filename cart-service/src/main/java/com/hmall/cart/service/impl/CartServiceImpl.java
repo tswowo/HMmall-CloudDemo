@@ -15,9 +15,7 @@ import com.hmall.cart.service.ICartService;
 import com.hmall.hmapi.client.ItemClient;
 import com.hmall.hmapi.dto.ItemDTO;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Collection;
 import java.util.List;
@@ -38,8 +36,6 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements ICartService {
 
-    private final RestTemplate restTemplate;
-    private final DiscoveryClient discoveryClient;
     private final ItemClient itemClient;
 
     @Override
@@ -88,7 +84,9 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
         // 2.查询商品
         List<ItemDTO> items = itemClient.queryItemByIds(itemIds);
+        System.out.println("查找到:" + items);
         if (CollUtils.isEmpty(items)) {
+            System.out.println("商品服务下线或商品不存在");
             return;
         }
         // 3.转为 id 到 item的map
@@ -108,7 +106,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
     @Override
     public void removeByItemIds(Collection<Long> itemIds) {
         // 1.构建删除条件，userId和itemId
-        QueryWrapper<Cart> queryWrapper = new QueryWrapper<Cart>();
+        QueryWrapper<Cart> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda()
                 .eq(Cart::getUserId, UserContext.getUser())
                 .in(Cart::getItemId, itemIds);
