@@ -29,3 +29,5 @@ target/
 /pay-service/src/main/resources/application-dev.yaml
 /pay-service/src/main/resources/application-local.yaml
 /docs/本地开发环境重启指南.md
+/hm-gateway/src/main/resources/application-dev.yaml
+/hm-gateway/src/main/resources/application-local.yaml

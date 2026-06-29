@@ -1,8 +1,0 @@
-hm:
-  db:
-    host: localhost
-    port: 13306
-    pw: qwert88SQL...
-  nacos:
-    host: localhost
-    port: 18848
