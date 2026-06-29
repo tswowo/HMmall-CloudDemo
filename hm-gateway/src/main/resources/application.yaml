@@ -31,3 +31,6 @@ spring:
           uri: lb://pay-service
           predicates:
             - Path=/pay-orders/**
+      default-filters:
+        - AddRequestHeader=theKey,theValue
+        - My=aVal,bVal,cVal
